@@ -116,7 +116,9 @@
             by our clients whom we have helped for production and the
             capabilities of our factories.
           </p>
-          <button class="btn bg-black text-light">INQUIRE NOW</button>
+          <button id="openQuote" class="btn bg-black text-light">
+            INQUIRE NOW
+          </button>
         </div>
       </div>
 
@@ -224,7 +226,7 @@
           ARE YOU LOOKING FOR A STYLE NOT FEATURED ON OUR WEBSITE? CONTACT US
           DIRECTLY AND WE WILL BE HAPPY TO ASSIST YOU!
         </h1>
-        <button class="btn btn-outline-dark mt-5">
+        <button id="openQuote" class="btn btn-outline-dark mt-5">
           HOW TO START A CLOTHING LINE
         </button>
       </div>
@@ -236,7 +238,7 @@
             style="height: 150px"
           >
             <h1>Get Your Brand Noticed with Custom Apparel!</h1>
-            <button class="btn btn-outline-dark">
+            <button id="openQuote" class="btn btn-outline-dark">
               REQUEST YOUR FREE CONSULTAION!
             </button>
           </div>
@@ -434,13 +436,15 @@
     <!-- Hiện form -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const openBtn = document.getElementById("openQuote");
+        const openBtns = document.querySelectorAll("#openQuote");
         const closeBtn = document.getElementById("closeQuote");
         const modal = document.getElementById("quoteModal");
 
-        openBtn.addEventListener("click", function () {
-          modal.classList.add("show");
-        });
+        for (const openBtn of openBtns) {
+          openBtn.addEventListener("click", function () {
+            modal.classList.add("show");
+          });
+        }
 
         closeBtn.addEventListener("click", function () {
           modal.classList.remove("show");

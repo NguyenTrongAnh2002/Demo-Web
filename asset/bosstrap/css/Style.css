@@ -85,12 +85,6 @@ body {
   position: relative;
 }
 
-.content-background .text-clothing {
-  /* position: absolute; */
-  top: 50px;
-  left: 10rem;
-}
-
 .content-background .option {
   padding-left: 5rem;
   padding-bottom: 5rem;

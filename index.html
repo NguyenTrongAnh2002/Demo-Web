@@ -142,7 +142,9 @@
                 clothing maker for affordable, standout apparel. Your brand’s
                 success starts here!
               </p>
-              <button class="btn bg-black text-light">GET IN TOUCH</button>
+              <button id="openQuote" class="btn bg-black text-light">
+                GET IN TOUCH
+              </button>
               <button class="btn btn-outline-dark">HOW TO START A BRAND</button>
             </div>
             <div class="img py-5">
@@ -267,9 +269,15 @@
                 by the readable content of a page when looking at its layout.
                 The point of using Lorem Ipsum is that it has a more-or-less.
               </p>
-              <button class="btn bg-warning my-3">LET'S GET STARTED!</button>
-              <button class="btn bg-black border border-light text-light">
-                OUR PORTFOLIO
+              <button id="openQuote" class="btn bg-warning my-3">
+                LET'S GET STARTED!
+              </button>
+              <button class="btn bg-black border border-light">
+                <a
+                  href="./asset/layout/portfolio.html"
+                  class="text-light text-decoration-none"
+                  >OUR PORTFOLIO</a
+                >
               </button>
             </div>
           </div>
@@ -416,6 +424,7 @@
           <p class="h1 text-warning">Affix Apparel!</p>
           <button
             type="button"
+            id="openQuote"
             class="btn btn-outline-dark border border-light text-light mt-5"
           >
             GET PERSIONALIZED HELP
@@ -474,8 +483,14 @@
                 </p>
               </div>
               <div class="mt-3">
-                <button class="btn bg-warning my-3">CONSULT NOW</button>
-                <button class="btn btn-outline-dark">OUR PORTFOLIO</button>
+                <button id="openQuote" class="btn bg-warning my-3">
+                  CONSULT NOW
+                </button>
+                <a
+                  href="./asset/layout/portfolio.html"
+                  class="btn btn-outline-dark"
+                  >OUR PORTFOLIO</a
+                >
               </div>
             </div>
           </div>
@@ -493,7 +508,7 @@
             style="height: 150px"
           >
             <h1>Get Your Brand Noticed with Custom Apparel!</h1>
-            <button class="btn btn-outline-dark">
+            <button id="openQuote" class="btn btn-outline-dark">
               REQUEST YOUR FREE CONSULTAION!
             </button>
           </div>
@@ -692,13 +707,15 @@
     <!-- Hiện form -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const openBtn = document.getElementById("openQuote");
+        const openBtns = document.querySelectorAll("#openQuote");
         const closeBtn = document.getElementById("closeQuote");
         const modal = document.getElementById("quoteModal");
 
-        openBtn.addEventListener("click", function () {
-          modal.classList.add("show");
-        });
+        for (const openBtn of openBtns) {
+          openBtn.addEventListener("click", function () {
+            modal.classList.add("show");
+          });
+        }
 
         closeBtn.addEventListener("click", function () {
           modal.classList.remove("show");
@@ -711,6 +728,7 @@
         });
       });
     </script>
+
     <script src="./asset/bosstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./asset/bosstrap/js/app.js"></script>
   </body>
