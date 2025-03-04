@@ -233,11 +233,8 @@ body {
 
 /* contact */
 
-.contact-background {
-  padding-top: 20%;
-  background-image: url(/asset/img/map.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+.contact-background img {
+  width: 100vw;
 }
 
 /* form */
