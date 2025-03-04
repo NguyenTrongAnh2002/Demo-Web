@@ -276,3 +276,9 @@ body {
 .form-close {
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .form-container .form-img {
+    display: none;
+  }
+}
