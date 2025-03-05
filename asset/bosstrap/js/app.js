@@ -59,12 +59,14 @@ prevButton.addEventListener("click", slidePrev);
 
 /* làm phần background */
 
-const container = document.querySelector(".background-container");
-let offset = 0;
-setInterval(() => {
-  offset += 33.33; // Di chuyển qua mỗi background
-  if (offset >= 99) {
-    offset = 0; // Quay lại vị trí ban đầu
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".background-slider");
+  let index = 0;
+
+  function changeSlide() {
+    index = (index + 1) % 3; // Khi index = 2, quay về 0
+    slider.style.transform = `translateX(-${index * 100}vw)`;
   }
-  container.style.transform = `translateX(-${offset}%)`;
-}, 3000); // Lướt mỗi 3 giây
+
+  setInterval(changeSlide, 3000); // Chuyển đổi mỗi 3 giây
+});

@@ -1,5 +1,11 @@
 /* index */
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -18,37 +24,50 @@ body {
   color: #000000;
 }
 
-/* .background-container {
-  padding-top: 40%;
-  background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner-3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-} */
-
 .background-container {
-  display: flex;
-  width: 300%; /* 3 phần tử background */
-  transition: transform 1s ease;
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
 }
 
-.background {
-  width: 33.33%;
+.background-slider {
+  display: flex;
+  width: 300%; /* Vì có 3 ảnh, mỗi ảnh chiếm 100% */
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.background-slider div {
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 }
 
-.background-1 {
+/* Background Desktop */
+.bg1 {
   background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner1.jpg");
 }
-
-.background-2 {
+.bg2 {
   background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner2.jpg");
 }
-
-.background-3 {
+.bg3 {
   background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner3.jpg");
+}
+
+/* Background Mobile */
+@media (max-width: 768px) {
+  .bg1 {
+    background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-1-1.jpg");
+  }
+  .bg2 {
+    background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-3.jpg");
+  }
+  .bg3 {
+    background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-2.jpg");
+  }
 }
 
 .premier {
@@ -274,5 +293,190 @@ body {
 @media (max-width: 1200px) {
   .form-container .form-img {
     display: none;
+  }
+}
+
+/* ABOUT */
+
+/* .about-background {
+  width: 100vw;
+  height: 100vh;
+} */
+
+.about-content-white {
+  background: #ffffff
+    url(https://affixapparel.com//wp-content/uploads/2024/09/bg-image-section-s.jpg?id=9572);
+}
+
+.about-content-black {
+  background: #303030
+    url(https://affixapparel.com//wp-content/uploads/2024/09/banner-section-jeans.jpg?id=9767);
+}
+
+.about-content2-container {
+  width: 1200px;
+}
+
+.makesure-img img,
+.startwith-img img,
+.continue-img img {
+  width: 1200px;
+  height: 300px;
+}
+
+/* BLOG INFORMATION */
+
+.list-icon a {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+  margin: 0 5px;
+}
+
+.list-icon .facebook {
+  background-color: #365493;
+}
+.list-icon .twitter {
+  background-color: #000;
+}
+.list-icon .printerest {
+  background-color: #cb2027;
+}
+.list-icon .linkedin {
+  background-color: #0274b3;
+}
+.list-icon .telegram {
+  background-color: #37aee2;
+}
+
+.list {
+  position: relative;
+}
+
+.list i {
+  font-size: 25px;
+  color: #000;
+  opacity: 0.5;
+}
+
+.list .tooltip-text {
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  /* Định vị tooltip */
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.list:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.list .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+
+  /* Tạo mũi tên */
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.move-blog a {
+  text-decoration: none;
+}
+
+.move-blog i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid black;
+}
+
+/* Tối ưu Responsive */
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .background-container {
+    display: block;
+    width: 100%;
+  }
+
+  .our-full-item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand img {
+    width: 120px;
+    height: auto;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .our-full-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .experience {
+    height: 300px;
   }
 }
