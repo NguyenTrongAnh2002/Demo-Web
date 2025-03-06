@@ -1,11 +1,10 @@
 const slider = document.querySelector(".slider");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
 const items = document.querySelectorAll(".item");
+const itemWidth = 350; // Kích thước mỗi item
+let startX = 0;
+let currentTranslate = 0;
+let isDragging = false;
 
-let currentIndex = 6; // Bắt đầu từ danh sách gốc
-const totalItems = items.length;
-const itemWidth = 350;
 // Nhân đôi danh sách để tạo hiệu ứng vô hạn
 const originalItems = [...items];
 originalItems.forEach((item) => {
@@ -17,45 +16,70 @@ originalItems.reverse().forEach((item) => {
   slider.prepend(clone);
 });
 
-// Cập nhật lại danh sách sau khi nhân đôi
+// Cập nhật danh sách mới sau khi nhân đôi
 const allItems = document.querySelectorAll(".item");
-slider.style.width = `${allItems.length * itemWidth}px`;
+const totalItems = allItems.length;
+slider.style.width = `${totalItems * itemWidth}px`;
 
 // Đặt slider ở vị trí chính giữa danh sách thật
+let currentIndex = originalItems.length;
 slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
-function slideNext() {
-  currentIndex++;
-  slider.style.transition = "transform 0.5s ease-in-out";
-  slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+function getTranslateX() {
+  const transformMatrix = window
+    .getComputedStyle(slider)
+    .getPropertyValue("transform");
+  if (transformMatrix !== "none") {
+    return parseFloat(transformMatrix.split(",")[4]);
+  }
+  return 0;
+}
 
-  // Khi đến cuối bản sao → Nhảy về đầu danh sách thật (không hiệu ứng)
-  if (currentIndex === totalItems * 2) {
-    setTimeout(() => {
-      slider.style.transition = "none";
-      currentIndex = totalItems;
-      slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }, 500);
+function startDrag(e) {
+  isDragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  currentTranslate = getTranslateX();
+  slider.style.transition = "none"; // Không transition khi kéo
+}
+
+function dragging(e) {
+  if (!isDragging) return;
+  let moveX =
+    (e.type.includes("mouse") ? e.clientX : e.touches[0].clientX) - startX;
+  slider.style.transform = `translateX(${currentTranslate + moveX}px)`;
+}
+
+function stopDrag() {
+  isDragging = false;
+  currentTranslate = getTranslateX();
+
+  // Nếu kéo quá phần cuối → Dịch chuyển ngay lập tức về phần đầu
+  if (currentTranslate > -itemWidth * (originalItems.length - 1)) {
+    slider.style.transition = "none";
+    currentTranslate = -itemWidth * (totalItems - originalItems.length - 1);
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+  }
+  // Nếu kéo quá phần đầu → Dịch chuyển ngay lập tức về phần cuối
+  else if (
+    currentTranslate <
+    -itemWidth * (totalItems - originalItems.length)
+  ) {
+    slider.style.transition = "none";
+    currentTranslate = -itemWidth * originalItems.length;
+    slider.style.transform = `translateX(${currentTranslate}px)`;
   }
 }
 
-function slidePrev() {
-  currentIndex--;
-  slider.style.transition = "transform 0.5s ease-in-out";
-  slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+// Sự kiện chuột
+slider.addEventListener("mousedown", startDrag);
+slider.addEventListener("mousemove", dragging);
+slider.addEventListener("mouseup", stopDrag);
+slider.addEventListener("mouseleave", stopDrag);
 
-  // Khi đến đầu bản sao → Nhảy về cuối danh sách thật (không hiệu ứng)
-  if (currentIndex === 0) {
-    setTimeout(() => {
-      slider.style.transition = "none";
-      currentIndex = totalItems;
-      slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }, 500);
-  }
-}
-
-nextButton.addEventListener("click", slideNext);
-prevButton.addEventListener("click", slidePrev);
+// Sự kiện cảm ứng (Mobile)
+slider.addEventListener("touchstart", startDrag);
+slider.addEventListener("touchmove", dragging);
+slider.addEventListener("touchend", stopDrag);
 
 /* làm phần background */
 

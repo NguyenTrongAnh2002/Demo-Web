@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .background-container {
+        position: relative;
+        width: 100vw;
+        height: 50vh; /* Điều chỉnh chiều cao */
+        overflow: hidden;
+      }
+
+      .background-slider {
+        display: flex;
+        width: 500%; /* 5 ảnh: 3 thật + 2 nhân bản */
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+        cursor: grab;
+      }
+
+      .background-slider:active {
+        cursor: grabbing;
+      }
+
+      .background-slider div {
+        width: 100vw;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+      }
+
+      /* Background Desktop */
+      .bg1 {
+        background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner1.jpg");
+      }
+      .bg2 {
+        background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner2.jpg");
+      }
+      .bg3 {
+        background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner3.jpg");
+      }
+
+      /* Background Mobile */
+      @media (max-width: 768px) {
+        .bg1 {
+          background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-1-1.jpg");
+        }
+        .bg2 {
+          background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-3.jpg");
+        }
+        .bg3 {
+          background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-2.jpg");
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-container">
+      <div class="background-slider">
+        <div class="bg bg3"></div>
+        <!-- Ảnh nhân bản (cuối cùng) -->
+        <div class="bg bg1"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="bg bg1"></div>
+        <!-- Ảnh nhân bản (đầu tiên) -->
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.querySelector(".background-slider");
+        let index = 1; // Bắt đầu từ ảnh thứ 1 (vì ảnh 0 là ảnh nhân bản)
+        let startX = 0;
+        let currentTranslate = 0;
+        let isDragging = false;
+        let autoSlideInterval;
+
+        function updateSlide(instant = false) {
+          if (instant) {
+            slider.style.transition = "none"; // Không hiệu ứng khi reset
+          } else {
+            slider.style.transition = "transform 0.5s ease-in-out";
+          }
+          slider.style.transform = `translateX(-${index * 100}vw)`;
+        }
+
+        function startAutoSlide() {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = setInterval(() => {
+            index++;
+            updateSlide();
+            setTimeout(() => {
+              if (index >= 4) {
+                index = 1;
+                updateSlide(true);
+              }
+            }, 500);
+          }, 3000); // Chuyển ảnh sau mỗi 3 giây
+        }
+
+        function stopAutoSlide() {
+          clearInterval(autoSlideInterval);
+          setTimeout(startAutoSlide, 5000); // Tiếp tục sau 5 giây khi dừng kéo
+        }
+
+        // Khi bắt đầu kéo
+        slider.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          startX = e.clientX;
+          currentTranslate = -index * window.innerWidth;
+          slider.style.transition = "none"; // Không transition khi kéo
+          slider.style.cursor = "grabbing";
+          stopAutoSlide();
+        });
+
+        // Khi kéo chuột
+        slider.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          let moveX = e.clientX - startX;
+          slider.style.transform = `translateX(${currentTranslate + moveX}px)`;
+        });
+
+        // Khi thả chuột
+        slider.addEventListener("mouseup", (e) => {
+          if (!isDragging) return;
+          let moveX = e.clientX - startX;
+
+          if (moveX < -50) {
+            index++; // Kéo sang trái
+          } else if (moveX > 50) {
+            index--; // Kéo sang phải
+          }
+
+          updateSlide();
+
+          setTimeout(() => {
+            if (index >= 4) {
+              index = 1;
+              updateSlide(true);
+            } else if (index <= 0) {
+              index = 3;
+              updateSlide(true);
+            }
+          }, 500);
+
+          isDragging = false;
+          slider.style.cursor = "grab";
+          startAutoSlide();
+        });
+
+        // Vuốt trên điện thoại
+        slider.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].clientX;
+          currentTranslate = -index * window.innerWidth;
+          slider.style.transition = "none";
+          stopAutoSlide();
+        });
+
+        slider.addEventListener("touchmove", (e) => {
+          let moveX = e.touches[0].clientX - startX;
+          slider.style.transform = `translateX(${currentTranslate + moveX}px)`;
+        });
+
+        slider.addEventListener("touchend", (e) => {
+          let moveX = e.changedTouches[0].clientX - startX;
+
+          if (moveX < -50) {
+            index++;
+          } else if (moveX > 50) {
+            index--;
+          }
+
+          updateSlide();
+
+          setTimeout(() => {
+            if (index >= 4) {
+              index = 1;
+              updateSlide(true);
+            } else if (index <= 0) {
+              index = 3;
+              updateSlide(true);
+            }
+          }, 500);
+
+          startAutoSlide();
+        });
+
+        // Đảm bảo ảnh ban đầu đúng vị trí và bắt đầu auto-slide
+        updateSlide(true);
+        startAutoSlide();
+      });
+    </script>
+  </body>
+</html>

@@ -40,13 +40,11 @@ body {
 
 .background-slider div {
   width: 100vw;
-  height: 100vh;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
 }
 
-/* Background Desktop */
 .bg1 {
   background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner1.jpg");
 }
@@ -57,10 +55,11 @@ body {
   background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/custom-apparel-banner3.jpg");
 }
 
-/* Background Mobile */
+/*Responsible Background Mobile */
 @media (max-width: 768px) {
   .bg1 {
     background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-1-1.jpg");
+    background-size: cover;
   }
   .bg2 {
     background-image: url("https://affixapparel.com/wp-content/uploads/2024/11/mob-banner-3.jpg");
@@ -116,6 +115,8 @@ body {
   gap: 10px;
   width: 1300px;
   margin: auto;
+  flex-wrap: nowrap;
+  cursor: grab;
 }
 
 .slider-wrapper {
@@ -127,6 +128,9 @@ body {
   display: flex;
   gap: 50px;
   transition: transform 0.5s ease-in-out;
+}
+.slider:active {
+  cursor: grabbing;
 }
 
 .slider-container .item {
@@ -154,6 +158,11 @@ body {
 .slider-container .arrow:hover {
   background: #555;
 }
+.slider-container .item img,
+.slider-container .item p {
+  user-select: none; /* Ngăn chặn chọn text */
+  pointer-events: none; /* Ngăn chặn sự kiện chuột */
+}
 
 .experience {
   height: 400px;
@@ -163,27 +172,25 @@ body {
   position: relative;
 }
 
-.partner .img {
-  height: 600px;
-}
-
-.partner img {
-  width: 500px;
-  height: 550px;
+.wrapper-img img {
+  width: 100%;
+  height: 100%;
   transform: scaleX(-1);
 }
 
-#footer .icon i {
-  color: #ffffff;
-  font-size: 30px;
-  margin: 1rem;
+.brand-logo .logo-item img {
+  width: 100%;
 }
 
-#footer .our-service a {
+/* footer */
+
+.footer-list-item li {
+  margin-bottom: 10px;
+}
+.footer-list-item a {
   text-decoration: none;
   color: #ffffff;
   opacity: 0.5;
-  margin: 5px 0;
 }
 
 #copyright a {
@@ -446,7 +453,8 @@ body {
     text-align: center;
   }
 
-  .img img {
+  .wrapper-img img,
+  .premier img {
     width: 100%;
     height: auto;
   }
@@ -478,5 +486,17 @@ body {
 
   .experience {
     height: 300px;
+  }
+}
+
+/* Responsible phần lothing */
+
+@media (max-width: 1000px) {
+  .option {
+    flex-direction: column;
+  }
+
+  .option h1 {
+    white-space: nowrap;
   }
 }
