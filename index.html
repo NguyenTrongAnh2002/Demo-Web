@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
-    <link rel="stylesheet" href="./asset/bosstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./asset/bosstrap/css/Style.css" />
+    <link rel="stylesheet" href="./asset/bosstrap/style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./asset/css/Main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -14,115 +14,195 @@
   </head>
 
   <body>
-    <!-- thanh nav -->
-    <nav class="navbar navbar-expand-lg" style="height: 90px">
-      <div class="container" style="background-color: white; z-index: 10">
-        <a class="navbar-brand" href="./index.html">
-          <img
-            src="https://affixapparel.com/wp-content/uploads/2024/09/affix-apparel-logo.png"
-            alt=""
-            width="150"
-            height="80"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div
-          class="collapse navbar-collapse"
-          id="navbarSupportedContent"
-          style="z-index: 10"
-        >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
-                >HOME</a
-              >
-            </li>
-            <!-- <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                OUT SERVICES
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                CUSTOMIZATION
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">PRODUCTS</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="./asset/layout/portfolio.html"
-                >PORTFOLIO</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="./asset/layout/blog.html"
-                >BLOG</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="./asset/layout/contact.html"
-                >CONTACT US</a
-              >
-            </li>
-          </ul>
-          <div class="d-flex">
-            <button id="openQuote" class="btn btn-outline-success">
-              GET A QUOTE
-            </button>
+  
+    <!-- Main -->
+    <div id="main">
+      <!-- button go home -->
+      <div class="back-home shadow">
+        <div  class="box"><i class="fa-solid fa-chevron-up"></i></div>
+      </div>
+
+      <!-- button help -->
+      <div class="help rounded-pill">
+        <div>
+          <button class="btn-help-show btn rounded-pill text-light ">
+            <span><i class="fa-solid fa-question"></i></span>
+            <span>Trợ giúp</span>
+          </button>
+        </div>
+      </div>
+      <!-- form chat -->
+      <div>
+        <div class="help-form bg-light">
+          <div>
+            <header>
+              <div class="d-flex bg-primary justify-content-center align-items-center position-relative">
+                <h1 class="text-light fs-6 py-2">Trò chuyện trực tuyến</h1>
+                <button class="btn btn-help-close position-absolute top-0 bottom-0 end-0 text-light">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </header>
+            <form action="">
+                <div class="main-form">
+                  <div class="m-4">
+                    <span>Rất tiếc, hiện tại chúng tôi không online. Hãy để lại tin nhắn và chúng tôi sẽ liên hệ lại với bạn.</span>
+                  </div>
+                  <div class="box-form">
+                    <div class="mx-4">
+                      <div class="d-flex flex-column my-4">
+                        <label for="">
+                          <div>
+                            <strong>Tên</strong>
+                          </div>
+                        </label>
+                        <input type="text" class="p-1">
+                      </div>
+
+                      <div class="d-flex flex-column my-4">
+                        <label for="">
+                          <div>
+                            <strong>Email</strong>
+                          </div>
+                        </label>
+                        <input type="text" class="p-1">
+                      </div>
+
+                      <div class="d-flex flex-column my-4">
+                        <label for="">
+                          <div>
+                            <strong>Tin nhắn</strong>
+                          </div>
+                        </label>
+                        <textarea name="" id="" class="p-1" style="height: 100px;"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-form py-3">
+                  <div class="d-flex justify-content-between mx-4">
+                    <a href="">Trợ giúp</a>
+                    <button type="submit" class="btn bg-primary text-light opacity-80">Gửi tin nhắn</button>
+                  </div>
+                </div>
+            </form>
           </div>
         </div>
       </div>
-    </nav>
 
-    <!-- Main -->
-    <div id="main">
+    <!-- thanh nav -->
+      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container" style="z-index: 10;">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              src="https://affixapparel.com/wp-content/uploads/2024/09/afx-white-logo.png"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            style="z-index: 10; "
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html"
+                  >HOME</a
+                >
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  OUT SERVICES
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  CUSTOMIZATION
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./asset/layout/portfolio.html"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./asset/layout/blog.html"
+                  >BLOG</a
+                >
+              </li>
+              <li class="nav-item">
+                <a style="white-space: nowrap;"
+                  class="nav-link"
+                  aria-current="page"
+                  href="./asset/layout/contact.html"
+                  >CONTACT US</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
       <div class="background-container">
         <div class="background-slider">
           <div class="bg-desktop bg1"></div>
@@ -457,8 +537,8 @@
           </button>
         </div>
 
-        <div class="partner row mx-5">
-          <div class="container col-7 my-auto">
+        <div class="partner row mx-5" >
+          <div class="partner-box container col-7 my-auto" >
             <div class="px-5">
               <div class="partner-wrapper">
                 <div class="wrapper-title mb-3">
@@ -474,7 +554,7 @@
                   </p>
                 </div>
                 <div class="wrapper-box d-flex flex-wrap">
-                  <div class="column-container col px-3">
+                  <div class="column-container col-md px-3">
                     <div class="info-wrapper mb-5">
                       <p class="fs-5" style="font-weight: bold">
                         1. Customized Solutions for Brands
@@ -500,7 +580,7 @@
                       </p>
                     </div>
                   </div>
-                  <div class="column-container col px-3">
+                  <div class="column-container col-md px-3">
                     <div class="info-wrapper mb-5">
                       <p class="fs-5" style="font-weight: bold">
                         3. First-Class Custom Labeling
@@ -579,11 +659,11 @@
             </div>
 
           </div>
-      </div>
+        </div>
     </div>
 
-    <!-- footer -->
 
+    <!-- footer -->
     <div id="footer" class="bg-black border-bottom py-5">
       <div class="container d-flex flex-wrap align-items-center">
         <div class="column-container col px-3 text-light">
@@ -737,33 +817,8 @@
         </div>
       </div>
     </div>
-
-    <!-- Hiện form -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const openBtns = document.querySelectorAll("#openQuote");
-        const closeBtn = document.getElementById("closeQuote");
-        const modal = document.getElementById("quoteModal");
-
-        for (const openBtn of openBtns) {
-          openBtn.addEventListener("click", function () {
-            modal.classList.add("show");
-          });
-        }
-
-        closeBtn.addEventListener("click", function () {
-          modal.classList.remove("show");
-        });
-
-        window.addEventListener("click", function (e) {
-          if (e.target === modal) {
-            modal.classList.remove("show");
-          }
-        });
-      });
-    </script>
-
-    <script src="./asset/bosstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./asset/bosstrap/js/app.js"></script>
+   
+    <script src="./asset/bosstrap/script/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./asset/js/app.js"></script>
   </body>
 </html>

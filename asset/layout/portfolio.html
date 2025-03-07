@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO</title>
-    <link rel="stylesheet" href="../bosstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../bosstrap/css/Style.css" />
+    <link rel="stylesheet" href="../bosstrap/style/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -14,115 +14,208 @@
   </head>
 
   <body>
-    <!-- thanh nav -->
-    <nav class="header navbar navbar-expand-lg">
-      <div class="container">
-        <nav class="navbar">
-          <div class="container">
-            <a class="navbar-brand" href="../../index.html">
-              <img
-                src="https://affixapparel.com/wp-content/uploads/2024/09/afx-white-logo.png"
-                alt="Bootstrap"
-                width="150"
-                height="70"
-              />
-            </a>
-          </div>
-        </nav>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../index.html"
-                >HOME</a
-              >
-            </li>
-            <!-- <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                OUT SERVICES
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                CUSTOMIZATION
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">PRODUCTS</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../layout/portfolio.html"
-                >PORTFOLIO</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../layout/blog.html"
-                >BLOG</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="../layout/contact.html"
-                >CONTACT US</a
-              >
-            </li>
-          </ul>
-          <div class="d-flex">
-            <button id="openQuote" class="btn btn-outline-success">
-              GET A QUOTE
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
     <!-- main -->
     <div id="main">
-      <div class="portfolio-background">
-        <div class="title" style="width: 500px">
-          <p class="h1">OUR <span class="text-warning">PORTFOLIO</span></p>
-          <p>
-            Our portfolio showcases some of our works and images shared with us
-            by our clients whom we have helped for production and the
-            capabilities of our factories.
-          </p>
-          <button id="openQuote" class="btn bg-black text-light">
-            INQUIRE NOW
+      <!-- button go home -->
+      <div class="back-home shadow">
+        <div class="box"><i class="fa-solid fa-chevron-up"></i></div>
+      </div>
+
+      <!-- button help -->
+      <div class="help rounded-pill">
+        <div>
+          <button class="btn-help-show btn rounded-pill text-light">
+            <span><i class="fa-solid fa-question"></i></span>
+            <span>Trợ giúp</span>
           </button>
         </div>
       </div>
+      <!-- form chat -->
+      <div>
+        <div class="help-form bg-light">
+          <div>
+            <header>
+              <div
+                class="d-flex bg-primary justify-content-center align-items-center position-relative"
+              >
+                <h1 class="text-light fs-6 py-2">Trò chuyện trực tuyến</h1>
+                <button
+                  class="btn btn-help-close position-absolute top-0 bottom-0 end-0 text-light"
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </header>
+            <form action="">
+              <div class="main-form">
+                <div class="m-4">
+                  <span
+                    >Rất tiếc, hiện tại chúng tôi không online. Hãy để lại tin
+                    nhắn và chúng tôi sẽ liên hệ lại với bạn.</span
+                  >
+                </div>
+                <div class="box-form">
+                  <div class="mx-4">
+                    <div class="d-flex flex-column my-4">
+                      <label for="">
+                        <div>
+                          <strong>Tên</strong>
+                        </div>
+                      </label>
+                      <input type="text" class="p-1" />
+                    </div>
 
-      <div class="portfolio-img container-md pb-5">
+                    <div class="d-flex flex-column my-4">
+                      <label for="">
+                        <div>
+                          <strong>Email</strong>
+                        </div>
+                      </label>
+                      <input type="text" class="p-1" />
+                    </div>
+
+                    <div class="d-flex flex-column my-4">
+                      <label for="">
+                        <div>
+                          <strong>Tin nhắn</strong>
+                        </div>
+                      </label>
+                      <textarea
+                        name=""
+                        id=""
+                        class="p-1"
+                        style="height: 100px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-form py-3">
+                <div class="d-flex justify-content-between mx-4">
+                  <a href="">Trợ giúp</a>
+                  <button
+                    type="submit"
+                    class="btn bg-primary text-light opacity-80"
+                  >
+                    Gửi tin nhắn
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- thanh nav -->
+      <nav
+        class="navbar navbar-expand-lg bg-dark border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <div class="container" style="z-index: 10">
+          <a class="navbar-brand" href="../../index.html">
+            <img
+              src="https://affixapparel.com/wp-content/uploads/2024/09/afx-white-logo.png"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            style="z-index: 10"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../index.html"
+                  >HOME</a
+                >
+              </li>
+              <!-- <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              OUT SERVICES
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              CUSTOMIZATION
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li> -->
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./portfolio.html"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./blog.html"
+                  >BLOG</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./contact.html"
+                  >CONTACT US</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- <div class="portfolio-background"></div> -->
+
+      <div class="portfolio-img container text-center pb-5">
         <img
           src="https://affixapparel.com/wp-content/uploads/2024/09/portfolio-1.jpg"
           alt=""
@@ -233,124 +326,181 @@
 
       <div class="content">
         <div class="brand-logo">
-          <div
-            class="brand container bg-warning mt-5 d-flex flex-column align-items-center justify-content-around"
-            style="height: 150px"
-          >
-            <h1>Get Your Brand Noticed with Custom Apparel!</h1>
-            <button id="openQuote" class="btn btn-outline-dark">
-              REQUEST YOUR FREE CONSULTAION!
-            </button>
-          </div>
-          <div class="logo container my-5 d-flex justify-content-between">
-            <img
-              src="https://affixapparel.com/wp-content/uploads/2021/07/affix-apparel-offers-oeko-tex-sustainble-fabrics.jpg"
-              alt=""
-              width="200"
-              height="90"
-            />
-            <img
-              src="https://affixapparel.com/wp-content/uploads/2021/07/Tru-%E2%80%93-Cotone-Pima-Certificato.jpg"
-              alt=""
-              width="300"
-              height="90px"
-            />
-            <img
-              src="https://affixapparel.com/wp-content/uploads/2021/07/sedex-affixapparel.png"
-              alt=""
-              width="300"
-              height="90px"
-            />
-            <img
-              src="https://affixapparel.com/wp-content/uploads/2021/07/affix-apparel-offers-usda-organic-sustainble-fabrics.jpg"
-              alt=""
-              width="300"
-              height="90px"
-            />
+          <div>
+            <div
+              class="brand container bg-warning my-5 d-flex flex-column align-items-center justify-content-around"
+              style="height: 150px"
+            >
+              <h1>Get Your Brand Noticed with Custom Apparel!</h1>
+              <button id="openQuote" class="btn btn-outline-dark">
+                REQUEST YOUR FREE CONSULTAION!
+              </button>
+            </div>
+
+            <div class="container d-flex flex-wrap">
+              <div class="column-container d-flex col">
+                <div class="logo-item mb-5">
+                  <img
+                    src="https://affixapparel.com/wp-content/uploads/2021/07/affix-apparel-offers-oeko-tex-sustainble-fabrics.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="logo-item mb-5">
+                  <img
+                    src="https://affixapparel.com/wp-content/uploads/2021/07/Tru-%E2%80%93-Cotone-Pima-Certificato-400x112.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="column-container d-flex col">
+                <div class="logo-item mb-5">
+                  <img
+                    src="https://affixapparel.com/wp-content/uploads/2021/07/sedex-affixapparel-400x112.png"
+                    alt=""
+                  />
+                </div>
+                <div class="logo-item mb-5">
+                  <img
+                    src="https://affixapparel.com/wp-content/uploads/2021/07/affix-apparel-offers-usda-organic-sustainble-fabrics-400x112.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- footer -->
-    <div id="footer" class="bg-black border-bottom border-light">
-      <div class="hotline container d-flex text-light pt-5">
-        <div class="col-3">
-          <a href="">
+    <div id="footer" class="bg-black border-bottom py-5">
+      <div class="container d-flex flex-wrap align-items-center">
+        <div class="column-container col px-3 text-light">
+          <div class="mb-3">
+            <a href="">
+              <img
+                src="https://affixapparel.com/wp-content/uploads/2024/09/afx-white-logo.png"
+                alt=""
+                style="width: 50%; height: 50%"
+              />
+            </a>
+          </div>
+          <div>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              <span class="opacity-50"> 0987654321</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              <i class="fa-regular fa-envelope"></i>
+              <span class="opacity-50">abc@gmail.com</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              <span class="opacity-50">Nguyễn văn Cừ, Long Biên, Hà Nội</span>
+            </p>
+          </div>
+          <div>
+            <p class="footer-icon">
+              <a
+                href="https://www.facebook.com/"
+                class="text-light fs-4 me-3 opacity-50"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="text-light fs-4 me-3 opacity-50"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/"
+                class="text-light fs-4 me-3 opacity-50"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="https://x.com/" class="text-light fs-4 me-3 opacity-50"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </p>
+          </div>
+        </div>
+        <div class="column-container col px-3 text-light">
+          <div><p class="h6">OUR SERVICE</p></div>
+          <ul
+            class="footer-list-item"
+            style="list-style-type: none; padding-left: 0"
+          >
+            <li class=""><a href="">jeans Manafacture</a></li>
+            <li><a href="">legging Manafacture</a></li>
+            <li><a href="">legging Manafacture</a></li>
+            <li><a href="">legging Manafacture</a></li>
+            <li><a href="">legging Manafacture</a></li>
+            <li><a href="">legging Manafacture</a></li>
+          </ul>
+        </div>
+        <div class="column-container col px-3 text-light">
+          <div><p class="h6">QUICK LINK</p></div>
+          <ul
+            class="footer-list-item"
+            style="list-style-type: none; padding-left: 0"
+          >
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="./contact.html">Contact us</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="">Customization</a></li>
+            <li><a href="">Who We are</a></li>
+            <li><a href="">FAQS </a></li>
+          </ul>
+        </div>
+        <div class="column-container col px-3">
+          <div>
             <img
-              src="https://affixapparel.com/wp-content/uploads/2024/09/afx-white-logo.png"
+              src="https://affixapparel.com/wp-content/uploads/2024/10/alibaba-gold.png"
               alt=""
-              width="150"
-              height="60"
             />
-          </a>
-          <p><i class="fa-solid fa-phone"></i> 0987654321</p>
-          <p><i class="fa-regular fa-envelope"></i> abc@gmail.com</p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i> Nguyễn văn Cừ, Long Biên,
-            Hà Nội
-          </p>
-          <p class="icon">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-          </p>
-        </div>
-        <div class="our-service col-3 d-flex flex-column">
-          <p class="h6">OUR SERVICE</p>
-          <a href="">jeans Manafacture</a>
-          <a href="">legging Manafacture</a>
-          <a href="">legging Manafacture</a>
-          <a href="">legging Manafacture</a>
-          <a href="">legging Manafacture</a>
-          <a href="">legging Manafacture</a>
-        </div>
-        <div class="our-service col-3 d-flex flex-column">
-          <p class="h6">QUICK LINK</p>
-          <a href="../../index.html">Home</a>
-          <a href="./contact.html">Contact us</a>
-          <a href="./blog.html">Blog</a>
-          <a href="">Customization</a>
-          <a href="">Who We are</a>
-          <a href="">FAQS </a>
-        </div>
-        <div class="col-3">
-          <img
-            src="https://affixapparel.com/wp-content/uploads/2024/10/alibaba-gold.png"
-            alt=""
-            width="200"
-            height="70"
-          />
-          <img
-            src="https://affixapparel.com/wp-content/uploads/2024/10/secure-payment.png"
-            alt=""
-            width="200"
-            height="70"
-          />
-          <img
-            src="https://affixapparel.com/wp-content/uploads/2024/10/ssl-secure.png"
-            alt=""
-            width="200"
-            height="70"
-          />
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://affixapparel.com/wp-content/uploads/2024/10/secure-payment.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://affixapparel.com/wp-content/uploads/2024/10/ssl-secure.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- copyright -->
-    <div id="copyright" class="bg-black" style="height: 50px">
-      <div class="container d-flex justify-content-between align-items-center">
+    <div id="copyright" class="bg-black">
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center"
+      >
         <div>
-          <p class="text-light pt-2">
+          <p class="text-light" style="white-space: nowrap">
             Copyright © 2025 Trong Anh rights reserved.
           </p>
         </div>
-        <div>
-          <a href="">Terms & Conditions | Privacy Policy</a>
-          <img
-            src="https://newapparel.afxwebdesign.com/wp-content/themes/woodmart/images/payments.png"
-            alt=""
-            width="255"
-          />
+        <div class="d-flex flex-wrap">
+          <div>
+            <a href="" style="white-space: nowrap"
+              >Terms & Conditions | Privacy Policy</a
+            >
+          </div>
+          <div>
+            <img
+              src="https://newapparel.afxwebdesign.com/wp-content/themes/woodmart/images/payments.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -362,17 +512,17 @@
       style="height: 100vh; width: 100vw"
     >
       <div
-        class="form-container d-flex col-6 border border-light rounded bg-light"
+        class="form-container container d-flex col-6 border border-light rounded bg-light"
       >
         <div class="form-img">
           <img
             src="https://affixapparel.com/wp-content/uploads/2024/11/pop-image-2.jpg"
             alt=""
-            width="450"
+            width="350"
             height="580"
           />
         </div>
-        <div class="container d-flex flex-column my-3">
+        <div class="container-sm d-flex flex-column my-3">
           <div class="d-flex justify-content-between">
             <p class="h3">Request Quote!</p>
             <div id="closeQuote" class="form-close">
@@ -386,7 +536,7 @@
                 <input type="text" placeholder="Enter your name" class="ps-2" />
               </div>
               <div class="d-flex flex-column col-6 mb-3">
-                <label for="">Phone Number:</label>
+                <div>Phone Number:</div>
                 <input
                   type="text"
                   placeholder="Enter your number"
@@ -433,32 +583,7 @@
       </div>
     </div>
 
-    <!-- Hiện form -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const openBtns = document.querySelectorAll("#openQuote");
-        const closeBtn = document.getElementById("closeQuote");
-        const modal = document.getElementById("quoteModal");
-
-        for (const openBtn of openBtns) {
-          openBtn.addEventListener("click", function () {
-            modal.classList.add("show");
-          });
-        }
-
-        closeBtn.addEventListener("click", function () {
-          modal.classList.remove("show");
-        });
-
-        window.addEventListener("click", function (e) {
-          if (e.target === modal) {
-            modal.classList.remove("show");
-          }
-        });
-      });
-    </script>
-
-    <script src="../bosstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../bosstrap/js/app.js"></script>
+    <script src="../bosstrap/script/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/app.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+/* Làm danh sách để kéo sang*/
 const slider = document.querySelector(".slider");
 const items = document.querySelectorAll(".item");
 const itemWidth = 350; // Kích thước mỗi item
@@ -93,4 +94,61 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   setInterval(changeSlide, 3000); // Chuyển đổi mỗi 3 giây
+});
+
+/* Thiết lập button go home */
+window.addEventListener("scroll", function () {
+  let backToTop = document.querySelector(".back-home");
+  if (window.scrollY > 200) {
+    // Khi cuộn xuống 200px thì hiển thị
+    backToTop.style.opacity = "1";
+    backToTop.style.visibility = "visible";
+  } else {
+    backToTop.style.opacity = "0";
+    backToTop.style.visibility = "hidden";
+  }
+
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Cuộn mượt lên đầu trang
+    });
+  });
+});
+
+/* Hiện form */
+document.addEventListener("DOMContentLoaded", function () {
+  const openBtns = document.querySelectorAll("#openQuote");
+  const closeBtn = document.getElementById("closeQuote");
+  const modal = document.getElementById("quoteModal");
+
+  for (const openBtn of openBtns) {
+    openBtn.addEventListener("click", function () {
+      modal.classList.add("show");
+    });
+  }
+
+  closeBtn.addEventListener("click", function () {
+    modal.classList.remove("show");
+  });
+
+  window.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
+});
+
+/* Hiện form chat */
+document.addEventListener("DOMContentLoaded", function () {
+  const openHelp = document.querySelector(".btn-help-show");
+  const closeHelp = document.querySelector(".btn-help-close");
+  const form = document.querySelector(".help-form");
+
+  openHelp.addEventListener("click", function () {
+    form.classList.add("show");
+  });
+  closeHelp.addEventListener("click", function () {
+    form.classList.remove("show");
+  });
 });
