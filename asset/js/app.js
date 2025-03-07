@@ -23,3 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // Button về đầu trang
 import { initBackToTop } from "./modules/backtohome.js";
 initBackToTop(".back-home", 200);
+
+// LÀm hiệu ứng background
+import { BackgroundSlider } from "./modules/backgroundSlider.js";
+
+document.addEventListener("DOMContentLoaded", function () {
+  new BackgroundSlider(".background-slider", 3, 3000);
+});

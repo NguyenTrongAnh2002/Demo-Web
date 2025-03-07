@@ -57,7 +57,7 @@
                             <strong>Tên</strong>
                           </div>
                         </label>
-                        <input type="text" class="p-1">
+                        <input type="text" class="p-1" required>
                       </div>
 
                       <div class="d-flex flex-column my-4">
@@ -66,7 +66,7 @@
                             <strong>Email</strong>
                           </div>
                         </label>
-                        <input type="text" class="p-1">
+                        <input type="text" class="p-1" required>
                       </div>
 
                       <div class="d-flex flex-column my-4">
@@ -75,7 +75,7 @@
                             <strong>Tin nhắn</strong>
                           </div>
                         </label>
-                        <textarea name="" id="" class="p-1" style="height: 100px;"></textarea>
+                        <textarea name="" id="" class="p-1" style="height: 100px;" required></textarea>
                       </div>
                     </div>
                   </div>
@@ -189,6 +189,7 @@
             </ul>
             <form class="d-flex" role="search">
               <input
+              id="search-input"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
@@ -198,6 +199,8 @@
                 Search
               </button>
             </form>
+            <!-- Kết quả tìm kiếm -->
+            <div id="search-results" class="search-results bg-white"></div>
           </div>
         </div>
       </nav>
@@ -762,23 +765,15 @@
             <div class="row d-flex flex-wrap my-3">
               <div class="d-flex flex-column col-6 mb-3">
                 <label for="">Your Name:</label>
-                <input type="text" placeholder="Enter your name" class="ps-2" />
+                <input type="text" placeholder="Enter your name" class="ps-2" required/>
               </div>
               <div class="d-flex flex-column col-6 mb-3">
                 <div>Phone Number:</div>
-                <input
-                  type="text"
-                  placeholder="Enter your number"
-                  class="ps-2"
-                />
+                <input type="text"placeholder="Enter your number"class="ps-2" required/>
               </div>
               <div class="d-flex flex-column col-12 mb-3">
                 <label for="">Your Email:</label>
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  class="ps-2"
-                />
+                <input type="text" placeholder="Enter your email"class="ps-2" required/>
               </div>
             </div>
             <p class="mb-1">Preferred method of correspondence :</p>
@@ -811,7 +806,6 @@
         </div>
       </div>
     </div>
-   
     <script src="./asset/bosstrap/script/bootstrap.bundle.min.js"></script>
     <script type="module" src="./asset/js/app.js"></script>
   </body>
