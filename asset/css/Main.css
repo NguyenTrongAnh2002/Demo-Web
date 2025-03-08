@@ -129,7 +129,7 @@ body {
 }
 
 .our-full-item img {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   height: 100%;
   /* object-fit: cover;  */
 }
@@ -368,7 +368,20 @@ body {
 
 /* BLOG INFORMATION */
 
+.blog-info img {
+  max-width: 100%;
+  height: auto;
+}
+.btn-custom {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
 .list-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -395,6 +408,10 @@ body {
   background-color: #37aee2;
 }
 
+.list-icon {
+  max-width: 1300px;
+  width: 100%;
+}
 .list {
   position: relative;
 }
